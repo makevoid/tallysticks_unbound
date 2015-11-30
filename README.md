@@ -18,3 +18,17 @@
 
 
 #### Code:
+
+You may want to look at those files if you want to check our code:
+
+Objective-C Code (based on the Barclays sample app)
+
+https://github.com/makevoid/tallysticks_unbound/blob/master/iOS_app/Unbound_Hackathon/ViewController.m#L54-L85
+
+JS Code (of the embedded webview)
+
+https://github.com/makevoid/tallysticks_unbound/blob/master/coffee/tally.coffee
+
+HTML (of the embedded webview)
+
+https://github.com/makevoid/tallysticks_unbound/blob/master/index.html
