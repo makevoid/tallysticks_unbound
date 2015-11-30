@@ -1,2 +1,37 @@
 body {
 }
+
+img.logo, img.spinner {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+img.spinner {
+  opacity: 0;
+  margin-bottom: 50px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+form.invoice {
+  text-align: center;
+}
+
+input {
+  width: 80%;
+}
+
+
+
+
+
+.s5 { height:  5px; }
+.s10 { height: 10px; }
+.s15 { height: 15px; }
+.s20 { height: 20px; }
+.s30 { height: 30px; }
+.s40 { height: 40px; }
+.s50 { height: 50px; }

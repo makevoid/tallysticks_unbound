@@ -6,13 +6,28 @@
     <link rel="stylesheet" href="css/vendor/normalize.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/vendor/skeleton.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+
+    <script src="js/vendor/zepto.js" charset="utf-8"></script>
+    <script src="js/vendor/underscore.js" charset="utf-8"></script>
+    <script src="js/tally.js" charset="utf-8"></script>
   </head>
   <body>
-    <h1>Invoice</h1>
-    <form class="" action="/" method="post">
+    <img class="logo" src="img/tallysticks-logo.png" alt="" />
+    <div class="s10"></div>
+    <h3>Invoice</h3>
+    <div class="s5"></div>
+    <form class="invoice" action="/" method="POST">
       <label>
-        <input type="button" name="invoice_id" value="">
+        <input type="text" name="invoice[id]" placeholder="loading invoice...">
       </label>
+      <label>
+        <input type="text" name="invoice[amount]" placeholder="">
+      </label>
+      <label>
+        <input type="text" name="invoice[supplier]" placeholder="">
+      </label>
+      <input type="submit" value="Pay">
     </form>
+    <img class="spinner" src="img/spinner.svg" />
   </body>
 </html>
