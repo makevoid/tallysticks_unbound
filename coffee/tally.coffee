@@ -6,7 +6,7 @@ access_token_client = 'rq5tojxrve3amn5y1zximbh1payanuu32l6a89oc1g85azkqus81gdqn'
 host = "http://52.31.192.26:8080"
 
 transactions_url = (account) ->
-  "/bapi/accounts/#{account}/transactions"
+  "#{host}/bapi/accounts/#{account}/transactions"
 
 $ ->
   form = $ "form.invoice"
@@ -46,7 +46,6 @@ post_transaction = (callback) ->
     "paymentMethod": "FASTER_PAYMENT"
   }
 
-  console.log("asd")
   before_send = (xhr) ->
     xhr.setRequestHeader 'Content-Type', 'application/json'
     xhr.setRequestHeader 'Access-Token', access_token_client
