@@ -64,6 +64,9 @@ get_invoice_data = function(invoice_id_new) {
 
 got_data = function(invoice_data) {
   var el, field, invoice, results, value;
+  spinner.css({
+    opacity: 0
+  });
   invoice = invoice_data;
   results = [];
   for (field in invoice) {
@@ -128,6 +131,9 @@ $(function() {
   });
   $("form.load_invoice").on("submit", function(evt) {
     evt.preventDefault();
+    spinner.css({
+      opacity: 1
+    });
     return get_invoice_data($("input[name='loaded_invoice[id]']").val());
   });
   return $(window).on("data_change", function(event, value) {

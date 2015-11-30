@@ -54,52 +54,17 @@ get_invoice_data = (invoice_id_new) ->
     got_data invoice_data
 
 got_data = (invoice_data) ->
+  spinner.css
+    opacity: 0
   invoice = invoice_data
   # invoice = { id: "1234", amount: 1000, supplier: "Currys ltd" } # tmp
   for field, value of invoice
     el = elem field
     el.val value
 
-# DONE VIA MOBILE APP and cocoa <> js bridge
-#
-# post_transaction_barc = (callback) ->
-#   account_id = 8253594415636011
-#   url = transactions_url account_id
-#   body = {
-#     "amount": {
-#       "direction": "OUT",
-#       "value": "4.00"
-#     },
-#     "created": "20-11-2015 10:10:29",
-#     "description": "i7 Lenovo at Cyber Monday Discount",
-#     "paymentDescriptor": {
-#       "id": "7117552983543782"
-#     },
-#     "metadata": [],
-#     "tags": [ "holiday", "savings" ],
-#     "notes": null,
-#     "paymentMethod": "FASTER_PAYMENT"
-#   }
-#
-#   $.ajax { url: url, type: "POST", data: JSON.stringify(body), beforeSend: before_send }, ->
-#     console.log "post transaction call"
-#     callback()
 
 post_transaction_tally = (barclays_tx_id, callback) ->
   url = tally_invoice_url invoice_id
-  # body = {
-  #   id: "1",
-  #   name: "Corp",
-  #   department: "department",
-  #   registration: 1,
-  #   tax: "UKVATN123",
-  #   classification: "test", # ?
-  #   organizationType: 1,
-  #   country: "UK",
-  #   contactName: "Mr Sugar",
-  #   contactEmail: "mr_sugar@example.com",
-  #   contactPhone: "0123 456789"
-  # }
   body = store.invoice
   body.paymentReference = barclays_tx_id
   body.paymentMethod = 2
@@ -146,6 +111,8 @@ $ ->
 
   $("form.load_invoice").on "submit", (evt) ->
     evt.preventDefault()
+    spinner.css
+      opacity: 1
     get_invoice_data($("input[name='loaded_invoice[id]']").val())
 
   $(window).on "data_change", (event, value) ->
