@@ -3,31 +3,51 @@
   <head>
     <meta charset="utf-8">
     <title>TallySticks 4 Barclays</title>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
     <link rel="stylesheet" href="css/vendor/normalize.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/vendor/skeleton.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="js/vendor/zepto.js" charset="utf-8"></script>
     <script src="js/vendor/underscore.js" charset="utf-8"></script>
     <script src="js/tally.js" charset="utf-8"></script>
   </head>
   <body>
+    <div class="s50"></div>
     <img class="logo" src="img/tallysticks-logo.png" alt="" />
     <div class="s10"></div>
     <h3>Invoice</h3>
     <div class="s5"></div>
+
+    <form class="load_invoice" action="/" method="POST">
+      <label>
+        <input type="text" name="loaded_invoice[id]" placeholder="load invoice:">
+        <input type="submit" value="Load">
+      </label>
+    </form>
+
+    <hr>
+
+    <div class="data hidden"></div>
     <form class="invoice" action="/" method="POST">
       <label>
         <input type="text" name="invoice[id]" placeholder="loading invoice...">
       </label>
       <label>
-        <input type="text" name="invoice[amount]" placeholder="">
+        <span>GBP</span>
+        <input type="text" name="invoice[amount]" placeholder="amount">
       </label>
       <label>
-        <input type="text" name="invoice[supplier]" placeholder="">
+        <input type="text" name="invoice[supplier]" placeholder="supplier">
       </label>
-      <input type="submit" value="Pay">
+      <!-- <input type="submit" value="Pay"> -->
     </form>
+
+
     <img class="spinner" src="img/spinner.svg" />
   </body>
 </html>
