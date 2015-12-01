@@ -1,6 +1,6 @@
-# Tallysticks
-### Barclays API integration
-### Unbound Hackathon
+# Tallysticks integration to:
+### Barclays API
+### for: Unbound Hackathon
 
 #### Screens:
 
